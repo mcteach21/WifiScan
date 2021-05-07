@@ -207,14 +207,16 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
 
         //((WiFiPeerListAdapter) getListAdapter()).notifyDataSetChanged();
         if (peers.size() == 0) {
-            Log.d(TAG, "No devices found");
+            Toast.makeText(this, "No devices found", Toast.LENGTH_SHORT).show();
             return;
         } else {
             Toast.makeText(this, "devices found! " + peers.size(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,  peers.size()+" device(s) found..", Toast.LENGTH_SHORT).show();
             Log.i(TAG, "==================================");
             Log.i(TAG, "devices : ");
             for (WifiP2pDevice devices : peers) {
                 Log.i(TAG, device.deviceName);
+                Toast.makeText(this, "device.deviceName", Toast.LENGTH_SHORT).show();
             }
             Log.i(TAG, "==================================");
         }
